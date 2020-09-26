@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hnguigu.dao.ShengDao">
+
+	<select id="queryallsheng" resultType="shengVo">
+		select * from t_province
+	</select>
+
+	<select id="queryCityByPid" parameterType="int" resultType="cityVo">
+		select * from t_city where provinceId =#{id}
+	</select>
+
+	<select id="queryAreaByCid" parameterType="int" resultType="Area">
+		select * from t_area where cityId =#{id}
+	</select>
+
+</mapper>
